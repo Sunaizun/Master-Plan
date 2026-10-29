@@ -1,0 +1,27 @@
+{
+  "name": "masters-application-os",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build && node scripts/assemble.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "esbuild tests/calc.test.ts --bundle --platform=node --format=esm --log-level=warning --outfile=node_modules/.cache/calc.test.mjs && node node_modules/.cache/calc.test.mjs",
+    "e2e": "python3 tests/e2e.py"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "recharts": "2.15.4",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.30",
+    "@types/react": "18.3.23",
+    "@types/react-dom": "18.3.7",
+    "@vitejs/plugin-react": "4.7.0",
+    "typescript": "5.8.3",
+    "vite": "6.3.5"
+  }
+}
